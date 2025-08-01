@@ -20,24 +20,37 @@
 // -231 <= nums[i] <= 231 - 1
 // 0 <= k <= 105
 
+let arr = [1, 2, 3, 4, 5, 6,7];
 
-let arr = [1, 2, 3, 4, 5, 6];
-let k = 3;
-let b = [];
-let result = [];
-function check(arr, k) {
-    let ans = Number(arr.join(''))
-    while (k > 0) {
-        b.push(ans % 10);
-        ans = Math.floor(ans / 10);
-        k = k - 1;
-    }
-    return b.concat(arr.slice(0,arr.length-k));
-}
+ function rotate(nums, k) {
+    k = k % nums.length; // handle k > length
 
-console.log(b);
-//  result.push(...b)
-// result.push(arr.length-k)
-// console.log(result);
-check(arr, k)
-// arr = Math.floor(ans/10);
+    // Take the last k elements out
+    const lastK = nums.splice(-k);
+
+    // Add them to the front of nums
+    console.log (nums.unshift(...lastK));
+};
+
+rotate(arr,3)
+
+
+// let k = 3;
+// let b = [];
+// let result = [];
+// function check(arr, k) {
+//     let ans = Number(arr.join(''))
+//     while (k > 0) {
+//         b.push(ans % 10);
+//         ans = Math.floor(ans / 10);
+//         k = k - 1;
+//     }
+//     return b.concat(arr.slice(0,arr.length-k));
+// }
+
+// console.log(b);
+// //  result.push(...b)
+// // result.push(arr.length-k)
+// // console.log(result);
+// check(arr, k)
+// // arr = Math.floor(ans/10);
