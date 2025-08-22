@@ -8,7 +8,6 @@ let arr = [11, 14, 42, 48, 52, 10, 39];
 //     max = arr[i];
 //   }
 // }
-
 // console.log(max);
 
 // Second Max
